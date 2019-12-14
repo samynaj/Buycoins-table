@@ -1,0 +1,98 @@
+body {
+  background-color: rgb(220,220,220);
+  font-size: 15px;
+  line-height: 1.4;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
+}
+main {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: 5px 5px 9px rgb(161, 161, 161);
+    width: 60%;
+    margin: 5% auto;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid rgb(220,220,220);
+    width: 100%;
+}
+th, td {
+  text-align: left;
+  padding-left: 10px;
+}
+th {
+  padding: 10px;
+  background-color: #f2f2f2;
+}
+th:first-child {
+    border-top-left-radius: 10px;
+}
+th:last-child {
+  border-top-right-radius: 10px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+.nav {
+  display: flex;
+  justify-content: flex-end;
+}
+.nav-prev {
+  display: flex;
+  justify-content: flex-start;
+}
+.nav-inside-page {
+  display: flex;
+  justify-content: space-between;
+}
+.next, .prev {
+  text-decoration: none;
+  color: black;
+  font-weight: 700;
+  margin: 10px;
+  padding: 5px;
+}
+.next:hover, .next:visited, .prev:hover {
+  outline: 1px solid sandybrown;
+}
+.next::after {
+  content: '\279C';
+  display: inline-block;
+  margin: 0 20px 0 5px;
+}
+.prev::before {
+  content: '\279C';
+  display: inline-block;
+  transform: rotate(180deg);
+  color: black;
+  margin-right: 5px;
+}
+
+@media screen and (max-width: 700px) {
+
+  main {
+    width: 100%;    
+  }
+  table {
+      width: 100%;
+  }
+  .bgt {
+      display: none;
+  }
+
+  td p::before {
+    content: attr(data-header);
+    display: block;
+    font-weight: 700;
+  }
+  tr {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+  }
+
+}

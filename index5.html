@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+       <table>
+      <thead>
+        <tr class="bgt">
+          <th class="bg">💰 Coin</th>
+          <th class="bg">📄 Code</th>
+          <th class="bg">🤑 Price</th>
+          <th class="bg">📉 Total Supply</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="t-row">
+          <td><p class="left first" data-header="💰 Coin"></p></td>
+          <td><p class="left second" data-header="📄 Code"></p></td>
+          <td><p class="left third" data-header="🤑 Price"></p></td>
+          <td><p class='left fourth' data-header="📉 Total Supply"></p></td>
+      </tr>
+        <tr class="t-row">
+          <td><p class="left first" data-header="💰 Coin"></p></td>
+          <td><p class="left second" data-header="📄 Code"></p></td>
+          <td><p class="left third" data-header="🤑 Price"></p></td>
+          <td><p class='left fourth' data-header="📉 Total Supply"></p></td>
+      </tr>
+        <tr class="t-row">
+          <td><p class="left first" data-header="💰 Coin"></p></td>
+          <td><p class="left second" data-header="📄 Code"></p></td>
+          <td><p class="left third" data-header="🤑 Price"></p></td>
+          <td><p class='left fourth' data-header="📉 Total Supply"></p></td>
+      </tr>
+        <tr class="t-row">
+          <td><p class="left first" data-header="💰 Coin"></p></td>
+          <td><p class="left second" data-header="📄 Code"></p></td>
+          <td><p class="left third" data-header="🤑 Price"></p></td>
+          <td><p class='left fourth' data-header="📉 Total Supply"></p></td>
+      </tr>
+        <tr class="t-row">
+          <td><p class="left first" data-header="💰 Coin"></p></td>
+          <td><p class="left second" data-header="📄 Code"></p></td>
+          <td><p class="left third" data-header="🤑 Price"></p></td>
+          <td><p class='left fourth' data-header="📉 Total Supply"></p></td>
+      </tr>
+        <tr class="t-row">
+          <td><p class="left first" data-header="💰 Coin"></p></td>
+          <td><p class="left second" data-header="📄 Code"></p></td>
+          <td><p class="left third" data-header="🤑 Price"></p></td>
+          <td><p class='left fourth' data-header="📉 Total Supply"></p></td>
+      </tr>
+        <tr class="t-row">
+          <td><p class="left first" data-header="💰 Coin"></p></td>
+          <td><p class="left second" data-header="📄 Code"></p></td>
+          <td><p class="left third" data-header="🤑 Price"></p></td>
+          <td><p class='left fourth' data-header="📉 Total Supply"></p></td>
+      </tr>
+        <tr class="t-row">
+          <td><p class="left first" data-header="💰 Coin"></p></td>
+          <td><p class="left second" data-header="📄 Code"></p></td>
+          <td><p class="left third" data-header="🤑 Price"></p></td>
+          <td><p class='left fourth' data-header="📉 Total Supply"></p></td>
+      </tr>
+        <tr class="t-row">
+          <td><p class="left first" data-header="💰 Coin"></p></td>
+          <td><p class="left second" data-header="📄 Code"></p></td>
+          <td><p class="left third" data-header="🤑 Price"></p></td>
+          <td><p class='left fourth' data-header="📉 Total Supply"></p></td>
+      </tr>
+        <tr class="t-row">
+          <td><p class="left first" data-header="💰 Coin"></p></td>
+          <td><p class="left second" data-header="📄 Code"></p></td>
+          <td><p class="left third" data-header="🤑 Price"></p></td>
+          <td><p class='left fourth' data-header="📉 Total Supply"></p></td>
+      </tr>
+      </tbody>
+    </table> 
+    <div class="nav-inside-page">
+      <a href="./index4.html" class="prev">Previous</a>
+      <a class="next" href="./index6.html">Next</a>
+    </div>
+  </main>
+  <script>
+    const nodeListFirst = document.querySelectorAll('.first');
+    const nodeListSecond = document.querySelectorAll('.second');
+    const nodeListThird = document.querySelectorAll('.third');
+    const nodeListFourth = document.querySelectorAll('.fourth');
+    
+    async function getCoins() {
+      try {const response = await fetch('https://api.coinlore.com/api/tickers/');
+      const result = await response.json();
+      const data = result.data;
+      return data;
+      } catch(error) {
+        console.log(error)
+      }
+    }
+    var bits
+    getCoins().then(data => {
+      bits = data;
+      const selected = bits.slice(50, 60)
+
+        for(var i = 0; i < nodeListFirst.length; i++) {
+            nodeListFirst[i].textContent = selected[i].name;
+            nodeListSecond[i].textContent = selected[i].symbol;
+            nodeListThird[i].textContent = '$' + selected[i].price_usd;
+            nodeListFourth[i].textContent = selected[i].tsupply + ' ' + selected[i].symbol;
+        }
+
+    })
+   
+  </script>
+</body>
+</html>
