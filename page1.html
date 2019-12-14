@@ -9,7 +9,7 @@
 </head>
 <body>
   <main>
-       <table>
+    <table>
       <thead>
         <tr class="bgt">
           <th class="bg">💰 Coin</th>
@@ -80,9 +80,10 @@
           <td><p class='left fourth' data-header="📉 Total Supply"></p></td>
       </tr>
       </tbody>
-    </table> 
-    <div class="nav-prev">
-      <a class="prev" href="./index8.html">Previous</a>
+    </table>
+    <div class="nav-inside-page">
+      <a href="./index.html" class="prev">Previous</a>
+      <a class="next" href="./page2.html">Next</a>
     </div>
   </main>
   <script>
@@ -103,7 +104,7 @@
     var bits
     getCoins().then(data => {
       bits = data;
-      const selected = bits.slice(90, 100)
+      const selected = bits.slice(10, 20)
 
         for(var i = 0; i < nodeListFirst.length; i++) {
             nodeListFirst[i].textContent = selected[i].name;

@@ -81,9 +81,8 @@
       </tr>
       </tbody>
     </table> 
-    <div class="nav-inside-page">
-      <a href="./index5.html" class="prev">Previous</a>
-      <a class="next" href="./index7.html">Next</a>
+    <div class="nav-prev">
+      <a class="prev" href="./page8.html">Previous</a>
     </div>
   </main>
   <script>
@@ -104,7 +103,7 @@
     var bits
     getCoins().then(data => {
       bits = data;
-      const selected = bits.slice(60, 70)
+      const selected = bits.slice(90, 100)
 
         for(var i = 0; i < nodeListFirst.length; i++) {
             nodeListFirst[i].textContent = selected[i].name;
